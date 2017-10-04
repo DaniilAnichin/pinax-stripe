@@ -51,7 +51,7 @@ class TestHookSet(DefaultHookSet):
             num_sent = EmailMessage(
                 subject,
                 message,
-                to=[charge.customer.user.email],
+                to=[email],
                 from_email=settings.PINAX_STRIPE_INVOICE_FROM_EMAIL
             ).send()
             charge.receipt_sent = num_sent > 0
